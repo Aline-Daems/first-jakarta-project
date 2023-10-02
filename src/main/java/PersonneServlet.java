@@ -18,7 +18,7 @@ public class PersonneServlet extends HttpServlet {
 
         ArrayList<Personne> javanaisList = new ArrayList<>();
 
-        Personne elise = new Personne("elise", "doe", 1);
+        Personne elise = new Personne("Elise", "Doe", 1);
         Personne Laurent = new Personne("Laurent", "Doe", 2);
         Personne Lucas = new Personne("Lucas", "Doe", 3);
         Personne Gaetan = new Personne("Gaetan", "Doe", 4);
@@ -38,6 +38,7 @@ public class PersonneServlet extends HttpServlet {
         javanaisList.add(Nathan);
         javanaisList.add(Aline);
 
+
         Random random = new Random();
 
         int positionAlea = random.nextInt(javanaisList.size());
@@ -46,11 +47,8 @@ public class PersonneServlet extends HttpServlet {
 
 
 
-
-
-
         req.setAttribute("roue", javanaisAlea);
-
+        req.setAttribute("roue2", javanaisList);
         req.getRequestDispatcher("/roue.jsp").forward(req, resp);
 
 
